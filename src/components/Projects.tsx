@@ -1,0 +1,177 @@
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Github, ExternalLink, Lock } from "lucide-react";
+
+const Projects = () => {
+  const projects = [
+    {
+      title: "Sistema de Detección de Vulnerabilidades Web",
+      description: "Herramienta automatizada para el análisis de seguridad en aplicaciones web utilizando técnicas de pentesting y análisis estático de código.",
+      technologies: ["Python", "Burp Suite API", "SQLMap", "BeautifulSoup"],
+      status: "En desarrollo",
+      type: "Ciberseguridad",
+      github: null, // Private repo
+      demo: null,
+      isPrivate: true
+    },
+    {
+      title: "Monitor de Red con Wazuh",
+      description: "Implementación de un sistema de monitoreo y detección de intrusiones utilizando Wazuh para análisis de logs y detección de amenazas en tiempo real.",
+      technologies: ["Wazuh", "ELK Stack", "Python", "Linux"],
+      status: "Completado",
+      type: "Monitoreo",
+      github: null,
+      demo: null,
+      isPrivate: true
+    },
+    {
+      title: "Aplicación de Machine Learning para Detección de Malware",
+      description: "Modelo de clasificación utilizando técnicas de aprendizaje automático para identificar patrones de comportamiento malicioso en archivos ejecutables.",
+      technologies: ["Python", "TensorFlow", "scikit-learn", "Pandas"],
+      status: "En desarrollo",
+      type: "IA/ML",
+      github: null,
+      demo: null,
+      isPrivate: true
+    },
+    {
+      title: "App Móvil de Gestión Académica",
+      description: "Aplicación híbrida desarrollada con Ionic y Angular para la gestión de horarios, notas y actividades académicas con interfaz intuitiva.",
+      technologies: ["Ionic", "Angular", "TypeScript", "Firebase"],
+      status: "Completado",
+      type: "Desarrollo Móvil",
+      github: null,
+      demo: null,
+      isPrivate: false
+    }
+  ];
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case "Completado":
+        return "bg-green-500/10 text-green-500 border-green-500/20";
+      case "En desarrollo":
+        return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20";
+      default:
+        return "bg-primary/10 text-primary border-primary/20";
+    }
+  };
+
+  const getTypeColor = (type: string) => {
+    switch (type) {
+      case "Ciberseguridad":
+        return "bg-red-500/10 text-red-400 border-red-500/20";
+      case "Monitoreo":
+        return "bg-blue-500/10 text-blue-400 border-blue-500/20";
+      case "IA/ML":
+        return "bg-purple-500/10 text-purple-400 border-purple-500/20";
+      case "Desarrollo Móvil":
+        return "bg-green-500/10 text-green-400 border-green-500/20";
+      default:
+        return "bg-primary/10 text-primary border-primary/20";
+    }
+  };
+
+  return (
+    <section id="projects" className="py-20">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Proyectos <span className="text-primary">Destacados</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-border/50 flex flex-col">
+                <CardHeader>
+                  <div className="space-y-3">
+                    <div className="flex items-start justify-between">
+                      <CardTitle className="text-lg leading-tight pr-4">
+                        {project.title}
+                      </CardTitle>
+                      {project.isPrivate && (
+                        <Lock className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                      )}
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      <Badge className={getStatusColor(project.status)}>
+                        {project.status}
+                      </Badge>
+                      <Badge className={getTypeColor(project.type)}>
+                        {project.type}
+                      </Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="flex-1 flex flex-col space-y-4">
+                  <p className="text-muted-foreground leading-relaxed flex-1">
+                    {project.description}
+                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge key={techIndex} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <div className="flex space-x-3 pt-2">
+                      {project.github ? (
+                        <Button variant="outline" size="sm" className="flex-1">
+                          <Github className="w-4 h-4 mr-2" />
+                          Código
+                        </Button>
+                      ) : (
+                        <Button variant="outline" size="sm" className="flex-1" disabled>
+                          <Github className="w-4 h-4 mr-2" />
+                          {project.isPrivate ? "Privado" : "Próximamente"}
+                        </Button>
+                      )}
+                      
+                      {project.demo ? (
+                        <Button variant="outline" size="sm" className="flex-1">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Demo
+                        </Button>
+                      ) : (
+                        <Button variant="outline" size="sm" className="flex-1" disabled>
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Sin demo
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-muted-foreground mb-6">
+              ¿Interesado en colaborar o conocer más detalles sobre estos proyectos?
+            </p>
+            <Button 
+              onClick={() => {
+                const element = document.querySelector("#contact");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
+              Contactar para más información
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
