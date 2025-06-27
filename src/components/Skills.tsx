@@ -1,49 +1,55 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Smartphone, Shield, Brain } from "lucide-react";
+import { Code, Smartphone, Shield, Brain, Server } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
-    {
-      icon: Code,
-      title: "Lenguajes de Programación",
-      skills: [
-        { name: "Python", icon: "🐍" },
-        { name: "Java", icon: "☕" },
-        { name: "C++", icon: "⚡" }
-      ]
-    },
-    {
-      icon: Brain,
-      title: "Frameworks y Librerías",
-      skills: [
-        { name: "TensorFlow", icon: "🧠" },
-        { name: "Keras", icon: "🤖" },
-        { name: "scikit-learn", icon: "📊" },
-        { name: "OpenCV", icon: "👁️" }
-      ]
-    },
-    {
-      icon: Smartphone,
-      title: "Desarrollo Frontend Móvil",
-      skills: [
-        { name: "Ionic", icon: "📱" },
-        { name: "Angular", icon: "🅰️" },
-        { name: "React", icon: "⚛️" }
-      ]
-    },
-    {
-      icon: Shield,
-      title: "Herramientas de Seguridad",
-      skills: [
-        { name: "Kali Linux", icon: "🐉" },
-        { name: "Burp Suite", icon: "🔍" },
-        { name: "Nikto", icon: "🛡️" },
-        { name: "Gobuster", icon: "🔎" },
-        { name: "Wazuh", icon: "👮" }
-      ]
-    }
-  ];
+  {
+    icon: Code,
+    title: "Lenguajes de Programación",
+    skills: [
+      { name: "Python", icon: "🐍" },
+      { name: "Java", icon: "☕" },
+      { name: "C++", icon: "⚡" },
+      { name: "TypeScript", icon: "🧩" },
+      { name: "JavaScript", icon: "✨" },
+      { name: "HTML", icon: "📄" },
+      { name: "CSS", icon: "🎨" }
+    ]
+  },
+  {
+    icon: Smartphone,
+    title: "Frameworks de Desarrollo Web/Móvil",
+    skills: [
+      { name: "Ionic", icon: "📱" },
+      { name: "Angular", icon: "🅰️" },
+      { name: "React", icon: "⚛️" },
+      { name: "Tailwind CSS", icon: "💨" },
+    ]
+  },
+  {
+    icon: Shield,
+    title: "Herramientas de Seguridad",
+    skills: [
+      { name: "Kali Linux", icon: "🐉" },
+      { name: "Burp Suite", icon: "🔍" },
+      { name: "Nikto", icon: "🛡️" },
+      { name: "Gobuster", icon: "🔎" },
+      { name: "Wazuh", icon: "👮" }
+    ]
+  },
+  {
+    icon: Server, // Asegúrate de tener importado este ícono
+    title: "Backend y Servidores",
+    skills: [
+      { name: "Apache HTTP Server", icon: "🌐" },
+      { name: "SSH", icon: "🔐" },
+      { name: "Node.js", icon: "🟢" },
+      { name: "Express.js", icon: "🚀" }
+    ]
+  }
+];
+
 
   return (
     <section id="skills" className="py-20">

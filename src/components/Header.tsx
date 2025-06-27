@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -24,52 +23,51 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="text-xl font-bold text-primary">
-            MAR
-          </div>
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center pointer-events-none">
+      <div className="pointer-events-auto bg-black/80 backdrop-blur-md rounded-full shadow-2xl border border-white/10 px-6 py-2 flex items-center gap-8 max-w-3xl mx-auto">
+        {/* Logo o nombre */}
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
 
-          {/* Mobile Menu Button */}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex space-x-6">
+          {navItems.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => scrollToSection(item.href)}
+              className="text-white hover:text-red-400 transition-colors font-medium"
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden ml-auto">
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
           </Button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 space-y-4">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
-        )}
       </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <nav className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-black/90 rounded-2xl shadow-xl border border-white/10 p-6 flex flex-col gap-4 md:hidden z-50 pointer-events-auto">
+          {navItems.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => scrollToSection(item.href)}
+              className="block text-white hover:text-red-400 transition-colors text-lg font-medium"
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+      )}
     </header>
   );
 };
