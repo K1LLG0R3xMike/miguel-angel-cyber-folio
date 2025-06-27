@@ -21,9 +21,9 @@ const Certifications = () => {
       case "Completado":
         return <CheckCircle className="w-5 h-5 text-green-500" />;
       case "En preparación":
-        return <Clock className="w-5 h-5 text-yellow-500" />;
+        return <Clock className="w-5 h-5 text-white" />;
       default:
-        return <Award className="w-5 h-5 text-primary" />;
+        return <Award className="w-5 h-5 text-red-400" />;
     }
   };
 
@@ -32,9 +32,9 @@ const Certifications = () => {
       case "Completado":
         return "bg-green-500/10 text-green-500 border-green-500/20";
       case "En preparación":
-        return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20";
+        return "bg-white/10 text-white border-white/20";
       default:
-        return "bg-primary/10 text-primary border-primary/20";
+        return "bg-red-400/10 text-red-400 border-red-400/20";
     }
   };
 
@@ -42,8 +42,8 @@ const Certifications = () => {
     <section id="certifications" className="py-20 bg-card/50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Certificaciones <span className="text-primary">Profesionales</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+            Certificaciones <span className="text-red-400">Profesionales</span>
           </h2>
 
           <div className="space-y-6">
@@ -52,11 +52,11 @@ const Certifications = () => {
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
                     <div className="space-y-2">
-                      <CardTitle className="flex items-start space-x-3">
-                        <Award className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                      <CardTitle className="flex items-start space-x-3 text-white">
+                        <Award className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
                         <span className="leading-tight">{cert.name}</span>
                       </CardTitle>
-                      <p className="text-muted-foreground">{cert.provider}</p>
+                      <p className="text-gray-300">{cert.provider}</p>
                     </div>
                     
                     <div className="flex items-center space-x-3">
@@ -69,25 +69,25 @@ const Certifications = () => {
                 </CardHeader>
                 
                 <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {cert.description}
                   </p>
 
                   {cert.status === "En preparación" && (
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">Progreso de preparación</span>
-                        <span className="text-sm text-muted-foreground">{cert.progress}%</span>
+                        <span className="text-sm font-medium text-white">Progreso de preparación</span>
+                        <span className="text-sm text-gray-300">{cert.progress}%</span>
                       </div>
                       <Progress value={cert.progress} className="h-2" />
                     </div>
                   )}
 
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-sm">Habilidades cubiertas:</h4>
+                    <h4 className="font-semibold text-sm text-white">Habilidades cubiertas:</h4>
                     <div className="flex flex-wrap gap-2">
                       {cert.skills.map((skill, skillIndex) => (
-                        <Badge key={skillIndex} variant="outline" className="text-xs">
+                        <Badge key={skillIndex} variant="outline" className="text-xs text-white border-white/20">
                           {skill}
                         </Badge>
                       ))}
@@ -99,7 +99,7 @@ const Certifications = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-muted-foreground">
+            <p className="text-gray-300">
               Constantemente expandiendo conocimientos y preparándome para nuevas certificaciones en ciberseguridad.
             </p>
           </div>

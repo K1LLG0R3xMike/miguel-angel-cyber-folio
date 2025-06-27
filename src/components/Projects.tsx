@@ -53,9 +53,9 @@ const Projects = () => {
       case "Completado":
         return "bg-green-500/10 text-green-500 border-green-500/20";
       case "En desarrollo":
-        return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20";
+        return "bg-white/10 text-white border-white/20";
       default:
-        return "bg-primary/10 text-primary border-primary/20";
+        return "bg-red-400/10 text-red-400 border-red-400/20";
     }
   };
 
@@ -70,7 +70,7 @@ const Projects = () => {
       case "Desarrollo Móvil":
         return "bg-green-500/10 text-green-400 border-green-500/20";
       default:
-        return "bg-primary/10 text-primary border-primary/20";
+        return "bg-red-400/10 text-red-400 border-red-400/20";
     }
   };
 
@@ -78,8 +78,8 @@ const Projects = () => {
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Proyectos <span className="text-primary">Destacados</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+            Proyectos <span className="text-red-400">Destacados</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -88,11 +88,11 @@ const Projects = () => {
                 <CardHeader>
                   <div className="space-y-3">
                     <div className="flex items-start justify-between">
-                      <CardTitle className="text-lg leading-tight pr-4">
+                      <CardTitle className="text-lg leading-tight pr-4 text-white">
                         {project.title}
                       </CardTitle>
                       {project.isPrivate && (
-                        <Lock className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                        <Lock className="w-5 h-5 text-gray-300 flex-shrink-0" />
                       )}
                     </div>
                     
@@ -108,14 +108,14 @@ const Projects = () => {
                 </CardHeader>
                 
                 <CardContent className="flex-1 flex flex-col space-y-4">
-                  <p className="text-muted-foreground leading-relaxed flex-1">
+                  <p className="text-gray-300 leading-relaxed flex-1">
                     {project.description}
                   </p>
 
                   <div className="space-y-3">
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="text-xs">
+                        <Badge key={techIndex} variant="outline" className="text-xs text-white border-white/20">
                           {tech}
                         </Badge>
                       ))}
@@ -123,24 +123,24 @@ const Projects = () => {
 
                     <div className="flex space-x-3 pt-2">
                       {project.github ? (
-                        <Button variant="outline" size="sm" className="flex-1">
+                        <Button variant="outline" size="sm" className="flex-1 text-white border-white/20 hover:bg-white/10">
                           <Github className="w-4 h-4 mr-2" />
                           Código
                         </Button>
                       ) : (
-                        <Button variant="outline" size="sm" className="flex-1" disabled>
+                        <Button variant="outline" size="sm" className="flex-1 text-gray-400 border-gray-400/20" disabled>
                           <Github className="w-4 h-4 mr-2" />
                           {project.isPrivate ? "Privado" : "Próximamente"}
                         </Button>
                       )}
                       
                       {project.demo ? (
-                        <Button variant="outline" size="sm" className="flex-1">
+                        <Button variant="outline" size="sm" className="flex-1 text-white border-white/20 hover:bg-white/10">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Demo
                         </Button>
                       ) : (
-                        <Button variant="outline" size="sm" className="flex-1" disabled>
+                        <Button variant="outline" size="sm" className="flex-1 text-gray-400 border-gray-400/20" disabled>
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Sin demo
                         </Button>
@@ -153,7 +153,7 @@ const Projects = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-6">
+            <p className="text-gray-300 mb-6">
               ¿Interesado en colaborar o conocer más detalles sobre estos proyectos?
             </p>
             <Button 
@@ -163,7 +163,7 @@ const Projects = () => {
                   element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="bg-red-600 hover:bg-red-700 text-white"
             >
               Contactar para más información
             </Button>

@@ -63,23 +63,23 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-card/50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Contacta<span className="text-primary">me</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+            Contacta<span className="text-red-400">me</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <Card className="border-border/50">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-3">
-                  <MessageSquare className="w-6 h-6 text-primary" />
+                <CardTitle className="flex items-center space-x-3 text-white">
+                  <MessageSquare className="w-6 h-6 text-red-400" />
                   <span>Envía un mensaje</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
+                    <label htmlFor="name" className="text-sm font-medium text-white">
                       Nombre completo
                     </label>
                     <Input
@@ -90,12 +90,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="bg-background border-border"
+                      className="bg-background border-border text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
+                    <label htmlFor="email" className="text-sm font-medium text-white">
                       Correo electrónico
                     </label>
                     <Input
@@ -106,12 +106,12 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-background border-border"
+                      className="bg-background border-border text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
+                    <label htmlFor="message" className="text-sm font-medium text-white">
                       Mensaje
                     </label>
                     <Textarea
@@ -122,13 +122,13 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="bg-background border-border resize-none"
+                      className="bg-background border-border resize-none text-white"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                    className="w-full bg-red-600 hover:bg-red-700 text-white"
                   >
                     <Send className="w-4 h-4 mr-2" />
                     Enviar mensaje
@@ -140,7 +140,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-6">Información de contacto</h3>
+                <h3 className="text-xl font-semibold mb-6 text-white">Información de contacto</h3>
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
                     <a
@@ -148,12 +148,12 @@ const Contact = () => {
                       href={info.href}
                       target={info.href.startsWith('http') ? '_blank' : undefined}
                       rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="flex items-center space-x-4 p-4 rounded-lg border border-border/50 hover:border-primary/50 transition-colors group"
+                      className="flex items-center space-x-4 p-4 rounded-lg border border-border/50 hover:border-red-400/50 transition-colors group"
                     >
-                      <info.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                      <info.icon className="w-5 h-5 text-red-400 group-hover:scale-110 transition-transform" />
                       <div>
-                        <p className="font-medium">{info.label}</p>
-                        <p className="text-sm text-muted-foreground">{info.value}</p>
+                        <p className="font-medium text-white">{info.label}</p>
+                        <p className="text-sm text-gray-300">{info.value}</p>
                       </div>
                     </a>
                   ))}
@@ -162,20 +162,20 @@ const Contact = () => {
 
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3">¿Buscas colaborar?</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  <h4 className="font-semibold mb-3 text-white">¿Buscas colaborar?</h4>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
                     Estoy siempre interesado en proyectos de ciberseguridad, 
                     desarrollo de software y oportunidades de aprendizaje. 
                     No dudes en contactarme para discutir ideas o posibles colaboraciones.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                    <span className="text-xs bg-red-400/10 text-red-400 px-2 py-1 rounded">
                       Pentesting
                     </span>
-                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                    <span className="text-xs bg-red-400/10 text-red-400 px-2 py-1 rounded">
                       Desarrollo
                     </span>
-                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                    <span className="text-xs bg-red-400/10 text-red-400 px-2 py-1 rounded">
                       Investigación
                     </span>
                   </div>
