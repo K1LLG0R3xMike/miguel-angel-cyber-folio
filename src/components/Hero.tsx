@@ -47,20 +47,22 @@ const Hero = () => {
                 Contactar
               </Button>
               
-              <Button 
-                variant="outline" 
+              <Button
+                asChild
+                variant="outline"
                 size="lg"
                 className="border-red-400 text-white hover:bg-red-600 hover:text-white px-8 py-3 text-lg"
-                onClick={() => window.open('#', '_blank')}
               >
-                Ver CV
+                <a href="/cv-miguel.pdf" download>
+                  Ver CV
+                </a>
               </Button>
 
               <Button
                 variant="outline"
                 size="lg"
                 className="border-blue-500 text-white hover:bg-blue-600 hover:text-white px-8 py-3 text-lg flex items-center gap-2"
-                onClick={() => window.open('https://linkedin.com', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/miguel-angel-rodríguez-04171827b', '_blank')}
               >
                 <Linkedin className="w-5 h-5" />
                 LinkedIn
@@ -95,7 +97,7 @@ const Hero = () => {
                 </svg>
               </span>
               <img
-                src="/imagenIA.png"
+                src="/fotoPortafolio.jpeg"
                 alt="Miguel Ángel Rodríguez Correa"
                 className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-xl relative z-10 group-hover:scale-105 group-hover:shadow-2xl transition-transform duration-300"
               />

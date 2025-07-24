@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,14 +22,16 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simulate form submission
-    toast({
-      title: "Mensaje enviado",
-      description: "Gracias por contactarme. Te responderé pronto.",
-    });
 
-    // Reset form
+    const phone = "573238092856"; // Reemplaza con tu número, ejemplo: 573001234567
+    const text = encodeURIComponent(
+      `Hola, soy ${formData.name}.\n\n${formData.message}\n\nMi correo: ${formData.email}`
+    );
+    const url = `https://wa.me/${phone}?text=${text}`;
+
+    window.open(url, "_blank");
+
+    // Opcional: limpiar el formulario
     setFormData({
       name: "",
       email: "",
@@ -42,20 +43,20 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "miguel.rodriguez@ejemplo.com",
-      href: "mailto:miguel.rodriguez@ejemplo.com"
+      value: "miguelrc055@gmail.com",
+      href: "mailto:miguelrc055@gmail.com"
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/miguelangel",
-      href: "https://github.com"
+      value: "github.com/K1LLG0R3xMike",
+      href: "https://github.com/K1LLG0R3xMike"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Miguel Ángel Rodríguez",
-      href: "https://linkedin.com"
+      href: "https://www.linkedin.com/in/miguel-angel-rodríguez-"
     }
   ];
 
