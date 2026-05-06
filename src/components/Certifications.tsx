@@ -1,18 +1,20 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Award, Clock, CheckCircle } from "lucide-react";
+import { Award, Clock, CheckCircle, ExternalLink } from "lucide-react";
 
 const Certifications = () => {
   const certifications = [
     {
       name: "eJPT - eLearnSecurity Junior Penetration Tester",
       provider: "eLearnSecurity / INE",
-      status: "En preparación",
-      progress: 75,
+      status: "Completado",
+      progress: 100,
       description: "Certificación fundamental en pentesting que valida habilidades en evaluación de seguridad, explotación de vulnerabilidades y análisis de redes.",
-      skills: ["Penetration Testing", "Network Security", "Web Application Security", "Vulnerability Assessment"]
+      skills: ["Penetration Testing", "Network Security", "Web Application Security", "Vulnerability Assessment"],
+      credentialUrl: "https://certs.ine.com/016237ac-46c6-4190-807e-64549515f504#acc.GWhfvd2Q"
     }
   ];
 
@@ -72,6 +74,20 @@ const Certifications = () => {
                   <p className="text-gray-300 leading-relaxed">
                     {cert.description}
                   </p>
+
+                  {cert.credentialUrl && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="text-white border-white/20 hover:bg-white/10"
+                    >
+                      <a href={cert.credentialUrl} target="_blank" rel="noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Ver certificación
+                      </a>
+                    </Button>
+                  )}
 
                   {cert.status === "En preparación" && (
                     <div className="space-y-2">

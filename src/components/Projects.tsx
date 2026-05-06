@@ -7,14 +7,15 @@ import { Github, ExternalLink, Lock } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Sistema de Detección de Vulnerabilidades Web",
+      title: "Escaner De Vulnerabilidades Web y Analisis de Vectores de ataque",
       description: "Herramienta automatizada para el análisis de seguridad en aplicaciones web utilizando técnicas de pentesting y análisis estático de código.",
       technologies: ["Python", "Burp Suite API", "SQLMap", "BeautifulSoup"],
       status: "En desarrollo",
       type: "Ciberseguridad",
-      github: null, // Private repo
+      github: "https://github.com/K1LLG0R3xMike/SecTestVK.git",
       demo: null,
-      isPrivate: true
+      isPrivate: false,
+      hideDemo: true
     },
     {
       title: "Monitor de Red con Wazuh",
@@ -24,7 +25,8 @@ const Projects = () => {
       type: "Monitoreo",
       github: null,
       demo: null,
-      isPrivate: true
+      isPrivate: true,
+      hideDemo: false
     },
     {
       title: "Aplicación de Machine Learning para Detección de Malware",
@@ -34,7 +36,8 @@ const Projects = () => {
       type: "IA/ML",
       github: null,
       demo: null,
-      isPrivate: true
+      isPrivate: true,
+      hideDemo: false
     },
     {
       title: "App Móvil de Gestión Académica",
@@ -44,7 +47,8 @@ const Projects = () => {
       type: "Desarrollo Móvil",
       github: null,
       demo: null,
-      isPrivate: false
+      isPrivate: false,
+      hideDemo: false
     }
   ];
 
@@ -123,9 +127,16 @@ const Projects = () => {
 
                     <div className="flex space-x-3 pt-2">
                       {project.github ? (
-                        <Button variant="outline" size="sm" className="flex-1 text-white border-white/20 hover:bg-white/10">
-                          <Github className="w-4 h-4 mr-2" />
-                          Código
+                        <Button
+                          asChild
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 text-white border-white/20 hover:bg-white/10"
+                        >
+                          <a href={project.github} target="_blank" rel="noreferrer">
+                            <Github className="w-4 h-4 mr-2" />
+                            Código
+                          </a>
                         </Button>
                       ) : (
                         <Button variant="outline" size="sm" className="flex-1 text-gray-400 border-gray-400/20" disabled>
@@ -134,17 +145,25 @@ const Projects = () => {
                         </Button>
                       )}
                       
-                      {project.demo ? (
-                        <Button variant="outline" size="sm" className="flex-1 text-white border-white/20 hover:bg-white/10">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Demo
-                        </Button>
-                      ) : (
-                        <Button variant="outline" size="sm" className="flex-1 text-gray-400 border-gray-400/20" disabled>
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Sin demo
-                        </Button>
-                      )}
+                      {!project.hideDemo &&
+                        (project.demo ? (
+                          <Button
+                            asChild
+                            variant="outline"
+                            size="sm"
+                            className="flex-1 text-white border-white/20 hover:bg-white/10"
+                          >
+                            <a href={project.demo} target="_blank" rel="noreferrer">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Demo
+                            </a>
+                          </Button>
+                        ) : (
+                          <Button variant="outline" size="sm" className="flex-1 text-gray-400 border-gray-400/20" disabled>
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Sin demo
+                          </Button>
+                        ))}
                     </div>
                   </div>
                 </CardContent>
