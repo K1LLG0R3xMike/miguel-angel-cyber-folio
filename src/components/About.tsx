@@ -10,6 +10,11 @@ const About = () => {
       description: "Conocimiento en pentesting y análisis de vulnerabilidades"
     },
     {
+      icon: Monitor,
+      title: "Monitoreo",
+      description: "Experiencia con Wazuh, Zabbix y Matomo"
+    },
+    {
       icon: Terminal,
       title: "Kali Linux",
       description: "Experiencia con herramientas de pentesting avanzadas"
@@ -18,11 +23,6 @@ const About = () => {
       icon: Search,
       title: "Herramientas Especializadas",
       description: "Burp Suite, Gobuster, Nikto y más"
-    },
-    {
-      icon: Monitor,
-      title: "Monitoreo",
-      description: "Implementación de soluciones con Wazuh"
     }
   ];
 
