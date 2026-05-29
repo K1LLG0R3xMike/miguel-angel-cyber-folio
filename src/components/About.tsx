@@ -54,9 +54,18 @@ const About = () => {
               </p>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                Mi objetivo es contribuir al fortalecimiento de la seguridad 
-                informática a través de la identificación proactiva de vulnerabilidades 
+                Mi objetivo es contribuir al fortalecimiento de la seguridad
+                informática a través de la identificación proactiva de vulnerabilidades
                 y el desarrollo de soluciones innovadoras.
+              </p>
+
+              <p className="text-lg text-gray-300 leading-relaxed">
+                También tengo experiencia en monitoreo y observabilidad de sistemas,
+                utilizando plataformas como <span className="text-red-400">Zabbix</span>,
+                <span className="text-red-400"> Matomo</span> y
+                <span className="text-red-400"> Grafana</span> para el seguimiento
+                del rendimiento de infraestructura, análisis de tráfico web y
+                visualización de métricas en tiempo real.
               </p>
             </div>
 
