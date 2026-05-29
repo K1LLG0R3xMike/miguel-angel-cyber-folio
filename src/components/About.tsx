@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: Shield,
       title: "Ciberseguridad Ofensiva",
-      description: "Especialización en pentesting y análisis de vulnerabilidades"
+      description: "Conocimiento en pentesting y análisis de vulnerabilidades"
     },
     {
       icon: Terminal,
