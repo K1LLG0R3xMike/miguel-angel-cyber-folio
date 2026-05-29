@@ -10,7 +10,7 @@ const Projects = () => {
       title: "Escaner De Vulnerabilidades Web y Analisis de Vectores de ataque",
       description: "Herramienta automatizada para el análisis de seguridad en aplicaciones web utilizando técnicas de pentesting y análisis estático de código.",
       technologies: ["Python", "Burp Suite API", "SQLMap", "BeautifulSoup"],
-      status: "En desarrollo",
+      status: "Completado",
       type: "Ciberseguridad",
       github: "https://github.com/K1LLG0R3xMike/SecTestVK.git",
       demo: null,
@@ -40,13 +40,13 @@ const Projects = () => {
       hideDemo: false
     },
     {
-      title: "App Móvil de Gestión Académica",
-      description: "Aplicación híbrida desarrollada con Ionic y Angular para la gestión de horarios, notas y actividades académicas con interfaz intuitiva.",
+      title: "App Móvil de Gestión de Emprendimiento",
+      description: "Aplicación híbrida desarrollada con Ionic y Angular para la gestión de emprendimientos, inventarios y actividades empresariales con interfaz intuitiva.",
       technologies: ["Ionic", "Angular", "TypeScript", "Firebase"],
       status: "Completado",
       type: "Desarrollo Móvil",
-      github: null,
-      demo: null,
+      github: "https://github.com/K1LLG0R3xMike/AppEmprendedores_movil2.git",
+      demo: "https://app-emprendedores-movil2.vercel.app/login",
       isPrivate: false,
       hideDemo: false
     }
