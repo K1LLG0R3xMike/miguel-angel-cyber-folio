@@ -63,7 +63,7 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Miguel Ángel Rodríguez",
-      href: "https://www.linkedin.com/in/miguel-angel-rodriguez-04171827b"
+      href: "https://www.linkedin.com/in/miguel-angel-rodríguez-04171827b"
     }
   ];
 

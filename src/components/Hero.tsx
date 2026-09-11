@@ -64,7 +64,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 className="border-blue-500 text-white hover:bg-blue-600 hover:text-white px-8 py-3 text-lg flex items-center gap-2"
-                onClick={() => window.open('https://www.linkedin.com/in/miguel-angel-rodriguez-04171827b', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://www.linkedin.com/in/miguel-angel-rodríguez-04171827b', '_blank', 'noopener,noreferrer')}
               >
                 <Linkedin className="w-5 h-5" />
                 LinkedIn
