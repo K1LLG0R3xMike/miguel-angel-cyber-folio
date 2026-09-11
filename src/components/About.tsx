@@ -1,27 +1,27 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Terminal, Search, Monitor } from "lucide-react";
+import { Shield, Terminal, Code, Monitor } from "lucide-react";
 
 const About = () => {
   const highlights = [
     {
+      icon: Code,
+      title: "Desarrollo de Software",
+      description: "React, Angular, Ionic y Node.js · web y móvil"
+    },
+    {
       icon: Shield,
-      title: "Ciberseguridad Ofensiva",
-      description: "Conocimiento en pentesting y análisis de vulnerabilidades"
+      title: "Pentester Junior (eJPT)",
+      description: "Certificado en pentesting web y análisis de vulnerabilidades"
     },
     {
       icon: Monitor,
-      title: "Monitoreo",
-      description: "Experiencia con Wazuh, Zabbix y Matomo"
+      title: "Experiencia en Celsia",
+      description: "Práctica de 6 meses: automatización e IA para monitoreo con Zabbix"
     },
     {
       icon: Terminal,
       title: "Kali Linux",
-      description: "Experiencia con herramientas de pentesting avanzadas"
-    },
-    {
-      icon: Search,
-      title: "Herramientas Especializadas",
       description: "Burp Suite, Gobuster, Nikto y más"
     }
   ];
@@ -37,35 +37,31 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                Soy un estudiante de Ingeniería de Sistemas en constante formación, 
-                con una pasión especial por la <span className="text-red-400 font-semibold">ciberseguridad ofensiva</span>. 
-                Mi enfoque principal está en el pentesting, donde utilizo herramientas 
-                especializadas como <span className="text-red-400">Kali Linux</span> como 
-                plataforma principal.
+                Estoy cursando el último semestre de Ingeniería de Sistemas y llevo
+                varios años programando en serio. Mi trabajo se mueve entre dos frentes
+                que me interesan por igual: el <span className="text-red-400 font-semibold">desarrollo de software</span>
+                {" "}&mdash; aplicaciones web y móviles con React, Angular, Ionic y Node.js &mdash;
+                {" "}y la <span className="text-red-400 font-semibold">ciberseguridad ofensiva</span>,
+                donde me formé y certifiqué como
+                {" "}<span className="text-red-400">eLearnSecurity Junior Penetration Tester (eJPT)</span>.
               </p>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                He desarrollado experiencia práctica con herramientas como 
-                <span className="text-red-400"> Burp Suite</span>, 
-                <span className="text-red-400"> Gobuster</span> y 
-                <span className="text-red-400"> Nikto</span> para el análisis de 
-                vulnerabilidades. Además, he trabajado en proyectos de monitoreo 
-                y detección utilizando <span className="text-red-400">Wazuh</span>.
+                Durante seis meses hice mi práctica profesional en <span className="text-red-400">Celsia</span>,
+                en el equipo de monitoreo de activos: desarrollé un agente de
+                {" "}<span className="text-red-400">IA para Zabbix</span> que automatiza el
+                análisis del monitoreo, construí una plataforma de automatización de
+                {" "}<span className="text-red-400">pentesting potenciada con IA</span> (de
+                escaneo a ataque) y mapeé la infraestructura crítica de la compañía en Zabbix.
               </p>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                Mi objetivo es contribuir al fortalecimiento de la seguridad
-                informática a través de la identificación proactiva de vulnerabilidades
-                y el desarrollo de soluciones innovadoras.
-              </p>
-
-              <p className="text-lg text-gray-300 leading-relaxed">
-                También tengo experiencia en monitoreo y observabilidad de sistemas,
-                utilizando plataformas como <span className="text-red-400">Zabbix</span>,
-                <span className="text-red-400"> Matomo</span> y
-                <span className="text-red-400"> Grafana</span> para el seguimiento
-                del rendimiento de infraestructura, análisis de tráfico web y
-                visualización de métricas en tiempo real.
+                En pentesting uso <span className="text-red-400">Kali Linux</span> como
+                plataforma principal y herramientas como <span className="text-red-400">Burp Suite</span>,
+                {" "}<span className="text-red-400">Gobuster</span> y
+                {" "}<span className="text-red-400">Nikto</span> para el análisis de
+                vulnerabilidades en aplicaciones web. Mi objetivo es aportar a equipos
+                donde poder escribir código y, a la vez, entender cómo se rompe.
               </p>
             </div>
 

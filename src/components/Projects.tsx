@@ -7,12 +7,12 @@ import { Github, ExternalLink, Lock } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Escaner De Vulnerabilidades Web y Analisis de Vectores de ataque",
-      description: "Herramienta automatizada para el análisis de seguridad en aplicaciones web utilizando técnicas de pentesting y análisis estático de código.",
+      title: "Escáner de Vulnerabilidades Web y Análisis de Vectores de Ataque",
+      description: "Herramienta propia para automatizar el reconocimiento y la detección de vulnerabilidades web, desarrollada durante mi preparación para el eJPT.",
       technologies: ["Python", "Burp Suite API", "SQLMap", "BeautifulSoup"],
       status: "Completado",
       type: "Ciberseguridad",
-      github: "https://github.com/K1LLG0R3xMike/SecTestVK.git",
+      github: "https://github.com/K1LLG0R3xMike/SecTestVK",
       demo: null,
       isPrivate: false,
       hideDemo: true
@@ -45,7 +45,7 @@ const Projects = () => {
       technologies: ["Ionic", "Angular", "TypeScript", "Firebase"],
       status: "Completado",
       type: "Desarrollo Móvil",
-      github: "https://github.com/K1LLG0R3xMike/AppEmprendedores_movil2.git",
+      github: "https://github.com/K1LLG0R3xMike/AppEmprendedores_movil2",
       demo: "https://app-emprendedores-movil2.vercel.app/login",
       isPrivate: false,
       hideDemo: false
@@ -133,7 +133,7 @@ const Projects = () => {
                           size="sm"
                           className="flex-1 text-white border-white/20 hover:bg-white/10"
                         >
-                          <a href={project.github} target="_blank" rel="noreferrer">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
                             <Github className="w-4 h-4 mr-2" />
                             Código
                           </a>
@@ -153,7 +153,7 @@ const Projects = () => {
                             size="sm"
                             className="flex-1 text-white border-white/20 hover:bg-white/10"
                           >
-                            <a href={project.demo} target="_blank" rel="noreferrer">
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="w-4 h-4 mr-2" />
                               Demo
                             </a>

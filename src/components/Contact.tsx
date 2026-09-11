@@ -23,20 +23,27 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const phone = "573238092856"; // Reemplaza con tu número, ejemplo: 573001234567
+    const phone = "573238092856";
     const text = encodeURIComponent(
       `Hola, soy ${formData.name}.\n\n${formData.message}\n\nMi correo: ${formData.email}`
     );
     const url = `https://wa.me/${phone}?text=${text}`;
 
-    window.open(url, "_blank");
+    const opened = window.open(url, "_blank", "noopener,noreferrer");
 
-    // Opcional: limpiar el formulario
-    setFormData({
-      name: "",
-      email: "",
-      message: ""
-    });
+    if (opened) {
+      toast({
+        title: "Abriendo WhatsApp",
+        description: "Se abrió una pestaña para enviar tu mensaje. Si no ves nada, escríbeme a miguelrc055@gmail.com.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      toast({
+        title: "No se pudo abrir WhatsApp",
+        description: "Tu navegador bloqueó la ventana. Escríbeme directamente a miguelrc055@gmail.com.",
+        variant: "destructive",
+      });
+    }
   };
 
   const contactInfo = [
@@ -56,7 +63,7 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Miguel Ángel Rodríguez",
-      href: "https://www.linkedin.com/in/miguel-angel-rodríguez-"
+      href: "https://www.linkedin.com/in/miguel-angel-rodriguez-04171827b"
     }
   ];
 
@@ -65,7 +72,7 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-            Contacta<span className="text-red-400">me</span>
+            Contácta<span className="text-red-400">me</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -127,13 +134,19 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-red-600 hover:bg-red-700 text-white"
                   >
                     <Send className="w-4 h-4 mr-2" />
-                    Enviar mensaje
+                    Enviar por WhatsApp
                   </Button>
+                  <p className="text-xs text-gray-400 text-center">
+                    Al enviar se abrirá WhatsApp con tu mensaje. ¿Prefieres correo?{" "}
+                    <a href="mailto:miguelrc055@gmail.com" className="text-red-400 underline">
+                      miguelrc055@gmail.com
+                    </a>
+                  </p>
                 </form>
               </CardContent>
             </Card>

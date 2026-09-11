@@ -82,7 +82,7 @@ const Certifications = () => {
                       size="sm"
                       className="text-white border-white/20 hover:bg-white/10"
                     >
-                      <a href={cert.credentialUrl} target="_blank" rel="noreferrer">
+                      <a href={cert.credentialUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Ver certificación
                       </a>

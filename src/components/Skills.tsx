@@ -29,17 +29,18 @@ const Skills = () => {
   },
   {
     icon: Shield,
-    title: "Herramientas de Seguridad",
+    title: "Seguridad y Monitoreo",
     skills: [
       { name: "Kali Linux", icon: "🐉" },
       { name: "Burp Suite", icon: "🔍" },
       { name: "Nikto", icon: "🛡️" },
       { name: "Gobuster", icon: "🔎" },
+      { name: "Zabbix", icon: "📊" },
       { name: "Wazuh", icon: "👮" }
     ]
   },
   {
-    icon: Server, // Asegúrate de tener importado este ícono
+    icon: Server,
     title: "Backend y Servidores",
     skills: [
       { name: "Apache HTTP Server", icon: "🌐" },

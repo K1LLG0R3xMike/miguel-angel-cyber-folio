@@ -1,73 +1,49 @@
-# Welcome to your Lovable project
+# Portafolio — Miguel Ángel Rodríguez Correa
 
-## Project info
+Sitio personal de portafolio: estudiante de Ingeniería de Sistemas enfocado en
+ciberseguridad ofensiva (pentesting). Muestra habilidades, certificaciones
+(eJPT) y proyectos.
 
-**URL**: https://lovable.dev/projects/b44374b2-7706-468c-a0ce-fdc6e145de57
+## Stack
 
-## How can I edit this code?
+- Vite + React 18 + TypeScript
+- Tailwind CSS + shadcn/ui
+- React Router
 
-There are several ways of editing your application.
+## Desarrollo local
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/b44374b2-7706-468c-a0ce-fdc6e145de57) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requisitos: Node.js 18+ y npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run dev      # servidor de desarrollo en http://localhost:8080
 ```
 
-**Edit a file directly in GitHub**
+## Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Comando            | Descripción                          |
+| ------------------ | ------------------------------------ |
+| `npm run dev`      | Servidor de desarrollo con HMR       |
+| `npm run build`    | Build de producción en `dist/`       |
+| `npm run typecheck`| Comprobación de tipos con TypeScript  |
+| `npm run lint`     | ESLint                               |
+| `npm run preview`  | Sirve el build de producción         |
 
-**Use GitHub Codespaces**
+## Estructura
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+  components/       Secciones de la página (Hero, About, Skills, ...)
+  components/ui/    Componentes shadcn/ui
+  pages/           Index y NotFound
+public/            Imágenes, CV, robots.txt, sitemap.xml
+```
 
-## What technologies are used for this project?
+## Despliegue
 
-This project is built with:
+El proyecto se edita y despliega desde [Lovable](https://lovable.dev). Los
+cambios en `main` se sincronizan automáticamente.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b44374b2-7706-468c-a0ce-fdc6e145de57) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+> Antes de publicar en un dominio propio, actualiza las URLs absolutas en
+> `index.html` (canonical, Open Graph), `public/robots.txt` y
+> `public/sitemap.xml`.

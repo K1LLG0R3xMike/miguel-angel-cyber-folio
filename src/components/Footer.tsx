@@ -9,12 +9,15 @@ const Footer = () => {
           </div>
           
           <p className="text-gray-300">
-            Estudiante de Ingeniería de Sistemas | Especialista en Ciberseguridad
+            Desarrollador de Software · Pentester Junior (eJPT)
+          </p>
+          <p className="text-sm text-gray-400">
+            Estudiante de último semestre de Ingeniería de Sistemas
           </p>
           
           <div className="border-t border-border/50 pt-4">
             <p className="text-sm text-gray-300">
-              © 2024 Miguel Ángel Rodríguez Correa. Todos los derechos reservados.
+              © {new Date().getFullYear()} Miguel Ángel Rodríguez Correa. Todos los derechos reservados.
             </p>
           </div>
         </div>

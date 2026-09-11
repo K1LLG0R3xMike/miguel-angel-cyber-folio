@@ -8,6 +8,7 @@ const Header = () => {
   const navItems = [
     { label: "Inicio", href: "#hero" },
     { label: "Sobre mí", href: "#about" },
+    { label: "Experiencia", href: "#experience" },
     { label: "Habilidades", href: "#skills" },
     { label: "Certificaciones", href: "#certifications" },
     { label: "Proyectos", href: "#projects" },
@@ -29,12 +30,12 @@ const Header = () => {
 
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex space-x-6" aria-label="Principal">
           {navItems.map((item) => (
             <button
               key={item.label}
               onClick={() => scrollToSection(item.href)}
-              className="text-white hover:text-red-400 transition-colors font-medium"
+              className="text-white hover:text-red-400 transition-colors font-medium rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               {item.label}
             </button>
@@ -47,6 +48,9 @@ const Header = () => {
             variant="ghost"
             size="icon"
             className="text-white"
+            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
@@ -56,12 +60,16 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-black/90 rounded-2xl shadow-xl border border-white/10 p-6 flex flex-col gap-4 md:hidden z-50 pointer-events-auto">
+        <nav
+          id="mobile-nav"
+          aria-label="Principal"
+          className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-black/90 rounded-2xl shadow-xl border border-white/10 p-6 flex flex-col gap-4 md:hidden z-50 pointer-events-auto"
+        >
           {navItems.map((item) => (
             <button
               key={item.label}
               onClick={() => scrollToSection(item.href)}
-              className="block text-white hover:text-red-400 transition-colors text-lg font-medium"
+              className="block text-white hover:text-red-400 transition-colors text-lg font-medium rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
             >
               {item.label}
             </button>

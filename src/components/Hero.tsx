@@ -24,18 +24,20 @@ const Hero = () => {
               </div>
               
                 <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent pb-3">
-                Miguel Rodríguez 
+                Miguel Ángel Rodríguez C.
                 </h1>
-              
+
                 <h2 className="text-xl md:text-2xl lg:text-3xl text-white font-medium py-2 pt-1">
-                  Estudiante de Ingeniería de Sistemas enfocado en Ciberseguridad
+                  Desarrollador de Software | Pentester Junior (eJPT)
                 </h2>
             </div>
 
             <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto md:mx-0 leading-relaxed">
-              Apasionado por la seguridad informática y el desarrollo de software. 
-              Especializado en pentesting, análisis de vulnerabilidades y programación 
-              con Python, C++ y Java.
+              Desarrollador de software en último semestre de Ingeniería de Sistemas,
+              con experiencia profesional en CELSIA y certificación eJPT. Trabajo en el
+              punto donde se cruzan el desarrollo y la seguridad ofensiva: construyo
+              aplicaciones con Python, C++, Java y TypeScript, y evalúo su seguridad con
+              técnicas de pentesting sobre Kali Linux.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
@@ -53,7 +55,7 @@ const Hero = () => {
                 size="lg"
                 className="border-red-400 text-white hover:bg-red-600 hover:text-white px-8 py-3 text-lg"
               >
-                <a href="/cv-miguel.pdf" download>
+                <a href="/cv-miguel-rodriguez.pdf" download="CV-Miguel-Angel-Rodriguez.pdf">
                   Ver CV
                 </a>
               </Button>
@@ -62,7 +64,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 className="border-blue-500 text-white hover:bg-blue-600 hover:text-white px-8 py-3 text-lg flex items-center gap-2"
-                onClick={() => window.open('https://www.linkedin.com/in/miguel-angel-rodríguez-04171827b', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/miguel-angel-rodriguez-04171827b', '_blank', 'noopener,noreferrer')}
               >
                 <Linkedin className="w-5 h-5" />
                 LinkedIn
@@ -98,7 +100,12 @@ const Hero = () => {
               </span>
               <img
                 src="/fotoPortafolio.jpeg"
-                alt="Miguel Ángel Rodríguez Correa"
+                alt="Retrato de Miguel Ángel Rodríguez Correa"
+                width={320}
+                height={320}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-xl relative z-10 group-hover:scale-105 group-hover:shadow-2xl transition-transform duration-300"
               />
             </div>
