@@ -7,6 +7,17 @@ import { Github, ExternalLink, Lock } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "Anubis: Plataforma de Pentesting con IA",
+      description: "Plataforma que orquesta flujos de escaneo a ataque como tareas asíncronas y recomienda planes de ataque con IA. La empecé durante mi práctica en Celsia y la sigo codesarrollando como proyecto propio.",
+      technologies: ["React", "FastAPI", "PostgreSQL", "Celery", "Redis"],
+      status: "En desarrollo",
+      type: "Ciberseguridad",
+      github: null,
+      demo: null,
+      isPrivate: true,
+      hideDemo: false
+    },
+    {
       title: "Escáner de Vulnerabilidades Web y Análisis de Vectores de Ataque",
       description: "Herramienta propia para automatizar el reconocimiento y la detección de vulnerabilidades web, desarrollada durante mi preparación para el eJPT.",
       technologies: ["Python", "Burp Suite API", "SQLMap", "BeautifulSoup"],
@@ -29,6 +40,17 @@ const Projects = () => {
       hideDemo: false
     },
     {
+      title: "Gestión Financiera para Emprendedores (Proyecto de Grado, 4,6/5)",
+      description: "Aplicación con asistente de IA para llevar las finanzas de un emprendimiento. Hice el frontend y el agente de IA, y apliqué hardening de seguridad al código antes de la sustentación.",
+      technologies: ["Ionic", "Angular", "TypeScript", "Firebase", "Agente IA"],
+      status: "Completado",
+      type: "Desarrollo Móvil",
+      github: "https://github.com/K1LLG0R3xMike/AppEmprendedores_movil2",
+      demo: "https://app-emprendedores-movil2.vercel.app/login",
+      isPrivate: false,
+      hideDemo: false
+    },
+    {
       title: "Aplicación de Machine Learning para Detección de Malware",
       description: "Modelo de clasificación utilizando técnicas de aprendizaje automático para identificar patrones de comportamiento malicioso en archivos ejecutables.",
       technologies: ["Python", "TensorFlow", "scikit-learn", "Pandas"],
@@ -37,17 +59,6 @@ const Projects = () => {
       github: null,
       demo: null,
       isPrivate: true,
-      hideDemo: false
-    },
-    {
-      title: "App Móvil de Gestión de Emprendimiento",
-      description: "Aplicación híbrida desarrollada con Ionic y Angular para la gestión de emprendimientos, inventarios y actividades empresariales con interfaz intuitiva.",
-      technologies: ["Ionic", "Angular", "TypeScript", "Firebase"],
-      status: "Completado",
-      type: "Desarrollo Móvil",
-      github: "https://github.com/K1LLG0R3xMike/AppEmprendedores_movil2",
-      demo: "https://app-emprendedores-movil2.vercel.app/login",
-      isPrivate: false,
       hideDemo: false
     }
   ];

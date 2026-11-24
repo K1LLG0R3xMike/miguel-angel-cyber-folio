@@ -1,80 +1,83 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Shield, Code, Linkedin } from "lucide-react";
+import { ArrowDown, Shield, Code, Linkedin, MessageCircle, FileText } from "lucide-react";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/miguel-angel-rodr%C3%ADguez-04171827b";
+const WHATSAPP_URL =
+  "https://wa.me/573238092856?text=" +
+  encodeURIComponent("Hola Miguel, vi tu portafolio y me gustaría hablar contigo.");
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden hero-gradient">
       <div className="absolute inset-0 code-pattern opacity-20"></div>
-      
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto flex flex-col-reverse md:flex-row items-center md:items-center gap-12 text-center md:text-left">
-          {/* Info principal */}
-          <div className="flex-1 space-y-8">
-            <div className="space-y-4">
-              <div className="flex justify-center md:justify-start space-x-4 mb-6">
+
+      <div className="container mx-auto px-4 pt-24 pb-10 md:py-20 relative z-10">
+        <div className="max-w-4xl mx-auto flex flex-col-reverse md:flex-row items-center md:items-center gap-6 md:gap-12 text-center md:text-left">
+          {/* Info principal: en celular los botones van antes del párrafo para que se vean sin hacer scroll */}
+          <div className="flex-1 flex flex-col gap-6 md:gap-8">
+            <div className="space-y-2 md:space-y-4">
+              <div className="hidden md:flex justify-start space-x-4 mb-6">
                 <Shield className="w-8 h-8 text-white animate-pulse" />
                 <Code className="w-8 h-8 text-white animate-pulse" />
               </div>
-              
-                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent pb-3">
-                Miguel Ángel Rodríguez C.
-                </h1>
 
-                <h2 className="text-xl md:text-2xl lg:text-3xl text-white font-medium py-2 pt-1">
-                  Desarrollador de Software | Pentester Junior (eJPT)
-                </h2>
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent pb-1 md:pb-3">
+                Miguel Ángel Rodríguez C.
+              </h1>
+
+              <h2 className="text-lg md:text-2xl lg:text-3xl text-white font-medium md:py-2 md:pt-1">
+                Pentester Junior (eJPT) · Monitoreo y desarrollo
+              </h2>
             </div>
 
-            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto md:mx-0 leading-relaxed">
-              Desarrollador de software en último semestre de Ingeniería de Sistemas,
-              con experiencia profesional en CELSIA y certificación eJPT. Trabajo en el
-              punto donde se cruzan el desarrollo y la seguridad ofensiva: construyo
-              aplicaciones con Python, C++, Java y TypeScript, y evalúo su seguridad con
-              técnicas de pentesting sobre Kali Linux.
+            <p className="order-last md:order-none text-base md:text-xl text-white/80 max-w-3xl mx-auto md:mx-0 leading-relaxed">
+              Estudiante de Ingeniería de Sistemas con tesis sustentada y certificación eJPT.
+              Hice mi práctica en el equipo de Observabilidad de CELSIA, monitoreando servicios
+              con Zabbix y Grafana y automatizando con Python. Me muevo entre la seguridad
+              ofensiva y el desarrollo: construyo herramientas y evalúo cómo se rompen.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
-              <Button 
-                onClick={scrollToContact}
-                size="lg" 
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg border border-red-500"
-              >
-                Contactar
-              </Button>
-              
+            <div className="grid grid-cols-2 gap-3 w-full max-w-sm mx-auto sm:flex sm:flex-row sm:flex-wrap sm:max-w-none sm:w-auto sm:gap-3 sm:justify-center md:justify-start md:mx-0">
               <Button
                 asChild
-                variant="outline"
                 size="lg"
-                className="border-red-400 text-white hover:bg-red-600 hover:text-white px-8 py-3 text-lg"
+                className="col-span-2 bg-red-600 hover:bg-red-700 text-white px-8 sm:px-4 py-3 text-lg sm:text-base border border-red-500"
               >
-                <a href="/cv-miguel-rodriguez.pdf" download="CV-Miguel-Angel-Rodriguez.pdf">
-                  Ver CV
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Linkedin className="w-5 h-5" />
+                  Conectar en LinkedIn
                 </a>
               </Button>
 
               <Button
+                asChild
                 variant="outline"
                 size="lg"
-                className="border-blue-500 text-white hover:bg-blue-600 hover:text-white px-8 py-3 text-lg flex items-center gap-2"
-                onClick={() => window.open('https://www.linkedin.com/in/miguel-angel-rodríguez-04171827b', '_blank', 'noopener,noreferrer')}
+                className="border-green-500 text-white hover:bg-green-600 hover:text-white px-4 py-3 text-base"
               >
-                <Linkedin className="w-5 h-5" />
-                LinkedIn
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp
+                </a>
+              </Button>
+
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-red-400 text-white hover:bg-red-600 hover:text-white px-4 py-3 text-base"
+              >
+                <a href="/cv-miguel-rodriguez.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <FileText className="w-5 h-5" />
+                  Ver CV
+                </a>
               </Button>
             </div>
           </div>
 
           {/* Foto personal */}
-          <div className="flex-shrink-0 mb-10 md:mb-0 group transition-all duration-300 flex justify-center items-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+          <div className="flex-shrink-0 md:mb-0 group transition-all duration-300 flex justify-center items-center">
+            <div className="relative w-36 h-36 md:w-80 md:h-80 flex items-center justify-center">
               {/* Media luna animada */}
               <span
                 className="absolute inset-0 z-20 pointer-events-none"
@@ -106,13 +109,13 @@ const Hero = () => {
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
-                className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-xl relative z-10 group-hover:scale-105 group-hover:shadow-2xl transition-transform duration-300"
+                className="w-36 h-36 md:w-80 md:h-80 rounded-full object-cover shadow-xl relative z-10 group-hover:scale-105 group-hover:shadow-2xl transition-transform duration-300"
               />
             </div>
           </div>
         </div>
 
-        <div className="animate-bounce mt-12">
+        <div className="hidden md:block animate-bounce mt-12">
           <ArrowDown className="w-6 h-6 text-white mx-auto" />
         </div>
       </div>

@@ -5,18 +5,22 @@ import { Briefcase, GraduationCap } from "lucide-react";
 const Experience = () => {
   const jobs = [
     {
-      role: "Práctica Estudiantil · Desarrollo y Automatización",
+      role: "Práctica · Observabilidad, Desarrollo y Automatización",
       company: "Celsia S.A.",
       period: "Ene 2026 – Jul 2026",
       duration: "6 meses",
       summary:
-        "Desarrollo de software, automatización y apoyo en ingeniería para el monitoreo de activos de infraestructura.",
+        "Monitoreo de APIs e infraestructura crítica, automatización y desarrollo para el equipo de Observabilidad.",
       achievements: [
+        "Configuré el monitoreo de APIs y dashboards tipo semáforo en Grafana para una plataforma de clientes, y documenté la configuración para el equipo.",
+        "Realicé el mapeo detallado de la infraestructura crítica y de TI de la compañía en Zabbix.",
+        "Recuperé una plataforma de analítica Matomo que llevaba ~22 meses fallando (DNS, proxy y cron), migré PHP 8.1 → 8.3 y redacté el informe del incidente.",
+        "Diseñé un monitoreo de salud con control de costos para un servicio de IA, con ítems HTTP agent y dependientes con JSONPath en Zabbix.",
         "Desarrollé un agente de IA para Zabbix orientado al análisis automatizado del monitoreo.",
-        "Construí una plataforma de automatización de pruebas de penetración potenciada con IA, orquestando el flujo completo de escaneo a ataque.",
-        "Realicé el mapeo detallado de la infraestructura crítica de la compañía en Zabbix.",
+        "Automaticé con Python y Microsoft Graph API las métricas mensuales del equipo a partir de reportes de Outlook.",
+        "Inicié el prototipo de Anubis, una plataforma de pentesting potenciada con IA que orquesta el flujo de escaneo a ataque; después la seguí desarrollando como proyecto propio.",
       ],
-      stack: ["Zabbix", "Python", "IA / LLM", "Automatización", "Linux"],
+      stack: ["Zabbix", "Grafana", "Python", "Microsoft Graph API", "IA / LLM", "Linux"],
     },
   ];
 
@@ -25,7 +29,7 @@ const Experience = () => {
       title: "Ingeniería de Sistemas",
       place: "Universidad de San Buenaventura",
       period: "2022 – 2026",
-      note: "Último semestre",
+      note: "Materias terminadas · Tesis sustentada (4,6/5)",
     },
   ];
 

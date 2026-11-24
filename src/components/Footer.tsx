@@ -9,10 +9,10 @@ const Footer = () => {
           </div>
           
           <p className="text-gray-300">
-            Desarrollador de Software · Pentester Junior (eJPT)
+            Pentester Junior (eJPT) · Monitoreo y desarrollo
           </p>
           <p className="text-sm text-gray-400">
-            Estudiante de último semestre de Ingeniería de Sistemas
+            Ingeniería de Sistemas · Tesis sustentada
           </p>
           
           <div className="border-t border-border/50 pt-4">

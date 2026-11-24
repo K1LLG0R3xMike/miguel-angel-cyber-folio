@@ -15,6 +15,15 @@ const Certifications = () => {
       description: "Certificación fundamental en pentesting que valida habilidades en evaluación de seguridad, explotación de vulnerabilidades y análisis de redes.",
       skills: ["Penetration Testing", "Network Security", "Web Application Security", "Vulnerability Assessment"],
       credentialUrl: "https://certs.ine.com/016237ac-46c6-4190-807e-64549515f504#acc.GWhfvd2Q"
+    },
+    {
+      name: "PEN-103 - Kali Linux Revealed",
+      provider: "OffSec",
+      status: "En curso",
+      progress: 0,
+      description: "Curso oficial de OffSec sobre Kali Linux: instalación, configuración, administración de paquetes y aseguramiento del sistema.",
+      skills: ["Kali Linux", "Linux / Debian", "Hardening de sistemas"],
+      credentialUrl: null
     }
   ];
 
@@ -23,6 +32,7 @@ const Certifications = () => {
       case "Completado":
         return <CheckCircle className="w-5 h-5 text-green-500" />;
       case "En preparación":
+      case "En curso":
         return <Clock className="w-5 h-5 text-white" />;
       default:
         return <Award className="w-5 h-5 text-red-400" />;
@@ -34,6 +44,7 @@ const Certifications = () => {
       case "Completado":
         return "bg-green-500/10 text-green-500 border-green-500/20";
       case "En preparación":
+      case "En curso":
         return "bg-white/10 text-white border-white/20";
       default:
         return "bg-red-400/10 text-red-400 border-red-400/20";
@@ -45,7 +56,7 @@ const Certifications = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-            Certificaciones <span className="text-red-400">Profesionales</span>
+            Certificaciones y <span className="text-red-400">Cursos</span>
           </h2>
 
           <div className="space-y-6">

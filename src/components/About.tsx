@@ -17,7 +17,7 @@ const About = () => {
     {
       icon: Monitor,
       title: "Experiencia en Celsia",
-      description: "Práctica de 6 meses: automatización e IA para monitoreo con Zabbix"
+      description: "Práctica de 6 meses: monitoreo con Zabbix y Grafana, automatización e IA"
     },
     {
       icon: Terminal,
@@ -37,8 +37,8 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                Estoy cursando el último semestre de Ingeniería de Sistemas y llevo
-                varios años programando en serio. Mi trabajo se mueve entre dos frentes
+                Terminé las materias de Ingeniería de Sistemas, sustenté mi tesis con
+                4,6/5 y llevo varios años programando en serio. Mi trabajo se mueve entre dos frentes
                 que me interesan por igual: el <span className="text-red-400 font-semibold">desarrollo de software</span>
                 {" "}&mdash; aplicaciones web y móviles con React, Angular, Ionic y Node.js &mdash;
                 {" "}y la <span className="text-red-400 font-semibold">ciberseguridad ofensiva</span>,
@@ -48,11 +48,13 @@ const About = () => {
 
               <p className="text-lg text-gray-300 leading-relaxed">
                 Durante seis meses hice mi práctica profesional en <span className="text-red-400">Celsia</span>,
-                en el equipo de monitoreo de activos: desarrollé un agente de
+                en el equipo de Observabilidad: monitoreé APIs y la infraestructura crítica
+                con Zabbix y Grafana, desarrollé un agente de
                 {" "}<span className="text-red-400">IA para Zabbix</span> que automatiza el
-                análisis del monitoreo, construí una plataforma de automatización de
-                {" "}<span className="text-red-400">pentesting potenciada con IA</span> (de
-                escaneo a ataque) y mapeé la infraestructura crítica de la compañía en Zabbix.
+                análisis del monitoreo y recuperé una plataforma que llevaba casi dos años
+                fallando. Allí también inicié el prototipo de
+                {" "}<span className="text-red-400">Anubis</span>, una plataforma de pentesting
+                potenciada con IA que después seguí desarrollando por mi cuenta.
               </p>
 
               <p className="text-lg text-gray-300 leading-relaxed">
